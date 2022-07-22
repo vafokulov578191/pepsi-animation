@@ -1,66 +1,24 @@
-import {cars} from './modules/db.js'
-let places = {
-    one: document.querySelector('.one'),
-    two: document.querySelector('.two'),
-    three: document.querySelector('.three')
-}
-let showMoreBtns = document.querySelectorAll('a[data-slice]')
+window.addEventListener('DOMContentLoaded', () => {
+    let bottomBlock = document.querySelector('.aziz_work_two')
+    let pepsi_buttle = document.querySelector('.pepsi_buttle')
+    let ger_more_div = document.querySelector('.ger_more_div')
+    let main_right = document.querySelector('.main_right')
+    let main_left = document.querySelector('.main_left')
+    let img = document.querySelector('.main_right_img ')
+    let icons_div = document.querySelector('.icons_div')
+    
+    
 
-let arrays = {
-    one: [],
-    two: [],
-    three: []
-}
-
-
-cars.map(item => {
-    let year = 2022 - item.year
-    if(year < 15) {
-        arrays.one.push(item)
-    } else if(year > 15 && year < 25) {
-        arrays.two.push(item)
-    }  else {
-        arrays.three.push(item)
-    }
+    setTimeout(() => {
+        bottomBlock.classList.add('toBottom')
+        setTimeout(() => {
+            pepsi_buttle.classList.add('pepsi_buttle_active') 
+            ger_more_div.classList.add('pepsi_buttle_active') 
+            setTimeout(() => {
+                main_right.classList.add('active_right')
+                main_left.classList.add('active_left')
+                img.classList.add('active_right')
+            }, 100);
+        }, 100);
+    }, 1000);
 })
-
-
-
-
-let reload = (arr, place) => {
-    place.innerHTML = ''
-
-    for(let item of arr) {
-        place.innerHTML +=  `
-            <div class="box">
-                <div class="info">
-                    <p class="name">${item.manufacturer}</p>
-                    <span class="model">${item.model}</span><br>
-                </div>
-                <div class="kuzof">
-                    <p class="Vin">VIN:</p>
-                    <p class="nomer">${item.vin}</p>
-                </div>
-                <div class="god">
-                    <p class="Year">YEAR:</p>
-                    <p class="chislo">${item.year}</p>
-                </div>
-                <button class="btn">Подробнее</button>
-            </div>
-        `
-    }
-}
-
-showMoreBtns.forEach(item => {
-    item.onclick = () => {
-        let key = item.getAttribute('data-slice')
-
-        let sliced = arrays[key].slice(0,16)
-
-        reload(sliced, places[key])
-    }
-})
-
-reload(arrays.one.slice(0,5), places.one)
-reload(arrays.two.slice(0,5), places.two)
-reload(arrays.three.slice(0,5), places.three)
