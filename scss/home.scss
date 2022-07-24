@@ -26,6 +26,8 @@
                 display: flex;
                 align-items: center;
                 background: transparent;
+                z-index: 200;
+                position: relative;
 
                 .logo {
                     margin-left: 100px;
@@ -135,7 +137,7 @@
                 width: 66px;
                 height: 400px;
                 background: transparent;
-                top: 500px;
+                top: 200px;
                 left: 50px;
 
                 .icons {
@@ -246,7 +248,7 @@
                 }
             }
 
-            .proceed{
+            .proceed {
                 width: 120px;
                 height: 120px;
                 background-color: #3688DC;
@@ -260,7 +262,7 @@
                 z-index: 100;
                 box-shadow: 0px 15px 35px;
 
-                .start{
+                .start {
                     cursor: pointer;
                     width: 35px;
                 }
@@ -275,7 +277,7 @@
                 background-color: #3688DC;
                 box-shadow: 0px 10px 30px;
 
-                .history_p{
+                .history_p {
                     color: white;
                     font-weight: bold;
                     font-size: 30px;
@@ -283,14 +285,14 @@
                     padding-left: 80px;
                 }
 
-                .history_info{
+                .history_info {
                     color: white;
                     padding-left: 80px;
                     padding-top: 30px;
                     font-size: 18px;
                 }
 
-                .history_info_two{
+                .history_info_two {
                     color: white;
                     padding-left: 80px;
                     padding-top: 10px;
@@ -331,6 +333,7 @@ a {
 
     }
 }
+
 .header {
     width: 100%;
     height: 70px;
@@ -599,15 +602,17 @@ a {
 
 .aziz {
     height: 100vh;
+
     .pepsi_buttle {
         position: absolute;
         bottom: 20%;
-        left: 42%;
+        left: 60%;
         width: 400px;
         transition: .7s ease;
     }
+
     .pepsi_buttle_active {
-         position: absolute;
+        position: absolute;
         bottom: -100% !important;
     }
 }
@@ -625,21 +630,34 @@ a {
     left: -100%;
     transition: .7s ease;
 }
+
 .main_right {
     position: absolute;
     top: 20%;
     right: -100%;
     transition: .7s ease;
 }
+
 .main_right_img {
     position: absolute;
     top: 10%;
     right: -100%;
 }
 
-.active_right{
+.active_right {
     right: 10% !important;
 }
-.active_left{
+
+.active_left {
     left: 10% !important;
 }
+
+.icons_div_active {
+    position: absolute;
+    width: 66px;
+    height: 400px;
+    background: transparent;
+    top: 340px !important;
+    left: 50px;
+}
+

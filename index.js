@@ -18,6 +18,7 @@ window.addEventListener('DOMContentLoaded', () => {
                 main_right.classList.add('active_right')
                 main_left.classList.add('active_left')
                 img.classList.add('active_right')
+                icons_div.classList.add('icons_div_active')
             }, 100);
         }, 100);
     }, 1000);
